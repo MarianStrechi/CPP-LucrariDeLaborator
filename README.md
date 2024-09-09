@@ -16,6 +16,7 @@ ClearScreen(): curăță ecranul.
 Draw(): desenează harta și starea actuală a jocului.
 Input(): citește și procesează input-ul de la jucător.
 Logic(): gestionează logica jocului, inclusiv creșterea scorului.
+
 2. Game.cpp
 Acesta este fișierul principal al jocului care implementează funcțiile definite în Game.hpp:
 
@@ -26,6 +27,7 @@ ClearScreen(): folosește comanda system("cls") pentru a curăța ecranul.
 Draw(): desenează harta pe ecran, reprezentând Pacman cu simbolul G, pereții cu #, spațiile libere cu , și punctele de scor(fantomele) cu "." . De asemenea, afișează scorul curent.
 Input(): detectează apăsarea tastelor W,A,S,D pentru a mișca Pacman în sus, stânga, jos, și dreapta, dacă nu există un perete obstacol în direcția respectivă.
 Logic(): verifică dacă Pacman se află pe un punct de scor (valoarea 2), adaugă 10 puncte la scor, și elimină punctul de pe hartă schimbând valoarea la 0.
+
 3. main.cpp
 Acest fișier conține funcția main() care gestionează bucla principală a jocului:
 
