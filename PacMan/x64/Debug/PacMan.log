@@ -1,1 +1,5 @@
-﻿  PacMan.vcxproj -> D:\C++ LAB 1\PacMan\PacMan\x64\Debug\PacMan.exe
+﻿  Game.cpp
+  main.cpp
+  Generating Code...
+  LINK : C:\Users\user\Desktop\CPP-LucrariDeLaborator-lab01\x64\Debug\PacMan.exe not found or not built by the last incremental link; performing full link
+  PacMan.vcxproj -> C:\Users\user\Desktop\CPP-LucrariDeLaborator-lab01\x64\Debug\PacMan.exe

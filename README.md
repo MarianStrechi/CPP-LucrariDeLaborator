@@ -1,37 +1,31 @@
-Acesta este un joc simplu PacMan creat pe o aplicatie-consola. Personajul este reprezentat de simboul "G", peretii de simbolul "#", iar fantomele(inamicii) de simbolul "." Scopul jocului este de a prinde aceste fantome, miscand personajul spre ele, si pentru fiecare fantoma prinsa se da scorul +10. Mișcarea personajului se realizează cu tastele W,A,S,D.
+Pentru acest laborator s-a creat un file Makefile care creeaza fișierul executabil pentru program daca este pornit cu compilatorul g++. 
+Acest file este utilizat pentru compilare, dar si pentru curațirea programului cand executarea sa e terminata 
+La fel s-a creat .gitignore file pentru listarea fișierelor generate care trebuie excluse din repozitoriu
 
-Descrierea funcționalității programului:
+Daca se foloseste un compilator cu suportul g++, jocul se ruleaza în acest mod:
+Se deschide un terminal în directorul proiectului.
+Se rulează comanda de compilare:
+make
 
-1. Game.hpp
-Acest fișier de antet definește constantele și funcțiile necesare pentru joc:
+Pentru rularea jocul se scrie comanda:
+./PacmanGame.exe
 
-Constante:
-WIDTH = 20 și HEIGHT = 10 stabilesc dimensiunea hărții jocului.
-Variabile externe:
-map[HEIGHT][WIDTH]: o matrice care reprezintă harta jocului.
-pacmanX și pacmanY: coordonatele lui Pacman pe hartă.
-score: scorul curent al jucătorului.
-Funcții:
-ClearScreen(): curăță ecranul.
-Draw(): desenează harta și starea actuală a jocului.
-Input(): citește și procesează input-ul de la jucător.
-Logic(): gestionează logica jocului, inclusiv creșterea scorului.
+Pentru a curăța fișierele obiect și executabilele generate se scrie comanda:
+make clean
 
-2. Game.cpp
-Acesta este fișierul principal al jocului care implementează funcțiile definite în Game.hpp:
+Am descris mai sus procesul creării file-ului executabil cu ajutorul folosirii file-ului makefile.
 
-Definirea hărții:
-map[HEIGHT][WIDTH]: o matrice ce reprezintă harta jocului. Valorile 1 reprezintă pereții (#), 0 reprezintă spațiile libere ( ), iar 2 reprezintă punctele de scor (.).
-Funcții:
-ClearScreen(): folosește comanda system("cls") pentru a curăța ecranul.
-Draw(): desenează harta pe ecran, reprezentând Pacman cu simbolul G, pereții cu #, spațiile libere cu , și punctele de scor(fantomele) cu "." . De asemenea, afișează scorul curent.
-Input(): detectează apăsarea tastelor W,A,S,D pentru a mișca Pacman în sus, stânga, jos, și dreapta, dacă nu există un perete obstacol în direcția respectivă.
-Logic(): verifică dacă Pacman se află pe un punct de scor (valoarea 2), adaugă 10 puncte la scor, și elimină punctul de pe hartă schimbând valoarea la 0.
+Am creat și un .gitignore file ce este utilizat pentru a specifica ce fișiere și directoare ar trebui să fie ignorate de Git, 
+adică să nu fie urmărite sau incluse în commit-uri: 
+*.o – Ignoră toate fișierele obiect (.o). 
+Acestea sunt fișiere temporare generate de compilator în timpul procesului de compilare. 
+Ele conțin codul mașină rezultat după compilarea unui fișier sursă C++ (de exemplu, Game.o).
 
-3. main.cpp
-Acest fișier conține funcția main() care gestionează bucla principală a jocului:
+*.exe – Ignoră toate fișierele executabile pentru Windows (.exe). 
+Acestea sunt rezultatul final al procesului de compilare și nu sunt de obicei incluse în repository, deoarece fiecare utilizator poate compila propriul executabil.
 
-Setează câteva poziții de pe hartă cu valoarea 2 pentru a reprezenta punctele de scor.
-Bucla principală:
-Apeluri la funcțiile Draw(), Input(), și Logic() pentru a desena harta, a procesa input-ul jucătorului și a gestiona logica jocului.
-Folosește Sleep(100) pentru a introduce o întârziere de 100 milisecunde între fiecare ciclu al buclei, astfel încât jocul să nu ruleze prea repede.
+*.out – Ignoră toate fișierele de ieșire (.out). 
+În general, acestea sunt fișierele executabile generate pe sistemele Linux sau macOS în urma compilării, de exemplu, după rularea unui program prin comanda g++.
+
+
+În acest proiect am inclus și însăși file-ul executabil care a fost creat la mine cand am rulat comenzile cu compilatorul cu suportul g++.
