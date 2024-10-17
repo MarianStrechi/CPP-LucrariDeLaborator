@@ -1,31 +1,20 @@
-Pentru acest laborator s-a creat un file Makefile care creeaza fișierul executabil pentru program daca este pornit cu compilatorul g++. 
-Acest file este utilizat pentru compilare, dar si pentru curațirea programului cand executarea sa e terminata 
-La fel s-a creat .gitignore file pentru listarea fișierelor generate care trebuie excluse din repozitoriu
+Acest proiect demonstrează o structură simplă pentru gestionarea datelor unui joc, utilizând două fișiere C++: GameData.hpp și GameData.cpp. 
+Aceste fișiere definesc și implementează o clasă GameData pentru a reprezenta informațiile de bază despre jucător (nume și scor) și include operatori și metode pentru manipularea acestor date:
 
-Daca se foloseste un compilator cu suportul g++, jocul se ruleaza în acest mod:
-Se deschide un terminal în directorul proiectului.
-Se rulează comanda de compilare:
-make
-
-Pentru rularea jocul se scrie comanda:
-./PacmanGame.exe
-
-Pentru a curăța fișierele obiect și executabilele generate se scrie comanda:
-make clean
-
-Am descris mai sus procesul creării file-ului executabil cu ajutorul folosirii file-ului makefile.
-
-Am creat și un .gitignore file ce este utilizat pentru a specifica ce fișiere și directoare ar trebui să fie ignorate de Git, 
-adică să nu fie urmărite sau incluse în commit-uri: 
-*.o – Ignoră toate fișierele obiect (.o). 
-Acestea sunt fișiere temporare generate de compilator în timpul procesului de compilare. 
-Ele conțin codul mașină rezultat după compilarea unui fișier sursă C++ (de exemplu, Game.o).
-
-*.exe – Ignoră toate fișierele executabile pentru Windows (.exe). 
-Acestea sunt rezultatul final al procesului de compilare și nu sunt de obicei incluse în repository, deoarece fiecare utilizator poate compila propriul executabil.
-
-*.out – Ignoră toate fișierele de ieșire (.out). 
-În general, acestea sunt fișierele executabile generate pe sistemele Linux sau macOS în urma compilării, de exemplu, după rularea unui program prin comanda g++.
+ 1. GameData.hpp Fișierul GameData.hpp este un header file care conține declarațiile pentru clasa GameData și metodele asociate. Principalele caracteristici ale acestui fișier includ: 
+Constructor implicit: Inițializează obiectul GameData cu valori prestabilite (nume jucător necunoscut și scor 0). 
+Constructor de copiere: Creează o copie a unui obiect GameData existent. 
+Constructor cu parametri: Permite inițializarea unui obiect GameData cu un nume de jucător și un scor personalizat. 
+Operator de copiere (=): Suprascrie operatorul de copiere pentru a gestiona atribuirea corectă între obiecte GameData. 
+Operator de comparație (==): Verifică dacă două obiecte GameData au aceleași valori pentru nume și scor. 
+Operatori de intrare/ieșire (>>, <<): Permite citirea și afișarea obiectelor GameData folosind fluxuri de intrare/ieșire standard (de exemplu, pentru citirea de la tastatură și afișarea pe ecran). 
 
 
-În acest proiect am inclus și însăși file-ul executabil care a fost creat la mine cand am rulat comenzile cu compilatorul cu suportul g++.
+2. GameData.cpp Fișierul GameData.cpp este un source file care conține implementările funcțiilor declarate în GameData.hpp. 
+Caracteristicile implementate sunt: Constructor implicit: Inițializează un obiect cu nume "Unknown" și scor 0. 
+Constructor de copiere: Copiază numele și scorul dintr-un alt obiect GameData. 
+Constructor cu parametri: Permite inițializarea unui obiect GameData cu valori specifice pentru numele jucătorului și scor. 
+Operator de copiere: Suprascrierea operatorului = pentru a evita auto-atribuirea și pentru a copia valorile relevante din alt obiect GameData. 
+Operator de comparație: Verifică egalitatea între două obiecte GameData bazată pe valorile atributelor playerName și score. 
+Operatori de citire/afișare: Operatorul de citire (>>) permite citirea numelui jucătorului și a scorului de la utilizator. 
+Operatorul de afișare (<<) permite afișarea scorului într-un format potrivit.
