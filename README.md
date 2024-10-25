@@ -11,6 +11,7 @@ Constructor cu parametri: Permite inițializarea unui obiect GameData cu un nume
 Operator de atribuire (=): Suprascrie operatorul de atribuire pentru a permite copierea corectă între obiecte GameData.
 Operator de comparație (==): Verifică dacă două obiecte GameData au aceleași valori pentru nume și scor.
 Operatori de intrare/ieșire (>> și <<): Permit citirea și afișarea obiectelor GameData folosind fluxuri standard de intrare/ieșire.
+
 2. GameData.cpp
 GameData.cpp este fișierul sursă ce conține implementările funcțiilor declarate în GameData.hpp. Caracteristicile implementate includ:
 
