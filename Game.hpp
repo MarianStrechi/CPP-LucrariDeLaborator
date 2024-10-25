@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 
 const int WIDTH = 20;
 const int HEIGHT = 10;

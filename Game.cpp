@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <conio.h>
 #include <windows.h>
 #include "Game.hpp"
@@ -30,16 +30,16 @@ void Draw() {
     for (int y = 0; y < HEIGHT; y++) {
         for (int x = 0; x < WIDTH; x++) {
             if (x == pacmanX && y == pacmanY) {
-                cout << "G";
+                cout << "G";  
             }
             else if (map[y][x] == 1) {
-                cout << "#";
+                cout << "#";  
             }
             else if (map[y][x] == 0) {
-                cout << " ";
+                cout << " ";  
             }
             else if (map[y][x] == 2) {
-                cout << ".";
+                cout << ".";  
             }
         }
         cout << endl;
@@ -69,6 +69,6 @@ void Input() {
 void Logic() {
     if (map[pacmanY][pacmanX] == 2) {
         score += 10;
-        map[pacmanY][pacmanX] = 0;
+        map[pacmanY][pacmanX] = 0;  
     }
 }

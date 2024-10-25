@@ -10,7 +10,6 @@ public:
     GameData();  
     GameData(const GameData& other);  
     GameData(std::string name, int score);  
-
     GameData& operator=(const GameData& other);  
     bool operator==(const GameData& other) const;  
 
