@@ -1,5 +1,6 @@
 ﻿#include "GameData.hpp"
-#include <algorithm>
+
+std::vector<std::shared_ptr<GameData>> GameData::players;
 
 GameData::GameData() : playerName("Unknown"), score(0) {}
 
@@ -33,33 +34,26 @@ std::ostream& operator<<(std::ostream& output, const GameData& data) {
 }
 
 
-void readGameData(std::istream& input, std::vector<std::shared_ptr<GameData>>& dataContainer) {
-    auto newGameData = std::make_shared<GameData>();
-    input >> *newGameData;
-    dataContainer.push_back(newGameData);
+
+void GameData::addPlayer(const std::string& playerName, int score) {
+    players.push_back(std::make_shared<GameData>(playerName, score));
 }
 
-
-void printGameData(std::ostream& output, const std::vector<std::shared_ptr<GameData>>& dataContainer) {
-    for (const auto& data : dataContainer) {
-        output << *data << std::endl;
-    }
-}
-
-
-void sortGameDataByScore(std::vector<std::shared_ptr<GameData>>& dataContainer) {
-    std::sort(dataContainer.begin(), dataContainer.end(), [](const std::shared_ptr<GameData>& a, const std::shared_ptr<GameData>& b) {
-        return a->score > b->score; 
-        });
-}
-
-
-std::shared_ptr<GameData> findGameDataByName(const std::vector<std::shared_ptr<GameData>>& dataContainer, const std::string& playerName) {
-    auto it = std::find_if(dataContainer.begin(), dataContainer.end(), [&playerName](const std::shared_ptr<GameData>& data) {
+std::shared_ptr<GameData> GameData::findPlayer(const std::string& playerName) {
+    auto it = std::find_if(players.begin(), players.end(), [&](const std::shared_ptr<GameData>& data) {
         return data->playerName == playerName;
         });
-    if (it != dataContainer.end()) {
-        return *it;
+    return (it != players.end()) ? *it : nullptr;
+}
+
+void GameData::sortPlayersByScore() {
+    std::sort(players.begin(), players.end(), [](const std::shared_ptr<GameData>& a, const std::shared_ptr<GameData>& b) {
+        return a->score > b->score;
+        });
+}
+
+void GameData::displayAllPlayers() {
+    for (const auto& player : players) {
+        std::cout << *player << std::endl;
     }
-    return nullptr;
 }
