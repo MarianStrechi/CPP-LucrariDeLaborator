@@ -1,13 +1,43 @@
-﻿all: PacmanGame
+﻿# Compiler
+CXX = g++
+CXXFLAGS = -Iinclude -std=c++17 -Wall
 
-PacmanGame: Game.o main.o
-	g++ -o PacmanGame.exe Game.o main.o
+# Directoare
+SRC_DIR = src
+LIB_DIR = lib
+INCLUDE_DIR = include
 
-Game.o:
-	g++ Game.cpp -o Game.o -c
+# Output
+OUT_DIR = bin
+OUT_FILE = $(OUT_DIR)/game
 
-main.o:
-	g++ main.cpp -o main.o -c
+# Biblioteca statică
+LIBRARY = $(OUT_DIR)/libgame.a
+
+# Fișiere sursă
+LIB_SOURCES = $(wildcard $(LIB_DIR)/*.cpp)
+MAIN_SOURCE = $(wildcard $(SRC_DIR)/*.cpp)
+
+# Fișiere obiect
+LIB_OBJECTS = $(LIB_SOURCES:$(LIB_DIR)/%.cpp=$(OUT_DIR)/%.o)
+MAIN_OBJECT = $(MAIN_SOURCE:$(SRC_DIR)/%.cpp=$(OUT_DIR)/%.o)
+
+# Reguli
+all: $(OUT_FILE)
+
+$(OUT_FILE): $(LIBRARY) $(MAIN_OBJECT)
+	$(CXX) $(CXXFLAGS) -o $@ $(MAIN_OBJECT) $(LIBRARY)
+
+$(LIBRARY): $(LIB_OBJECTS)
+	ar rcs $@ $^
+
+$(OUT_DIR)/%.o: $(LIB_DIR)/%.cpp
+	@mkdir -p $(OUT_DIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+$(OUT_DIR)/%.o: $(SRC_DIR)/%.cpp
+	@mkdir -p $(OUT_DIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean:
-	rm -f *.o *.exe
+	rm -rf $(OUT_DIR)
