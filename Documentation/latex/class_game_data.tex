@@ -1,0 +1,268 @@
+\doxysection{Game\+Data Class Reference}
+\hypertarget{class_game_data}{}\label{class_game_data}\index{GameData@{GameData}}
+
+
+Reprezintă datele unui jucător, incluzând numele și scorul acestuia.  
+
+
+
+
+{\ttfamily \#include $<$Game\+Data.\+hpp$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_game_data_a67ab18c5a35df618e99983275c7552ab}{Game\+Data}} ()
+\begin{DoxyCompactList}\small\item\em Constructor implicit pentru clasa \doxylink{class_game_data}{Game\+Data}. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_data_acae720560f6f8462328e801f08204804}{Game\+Data}} (const \mbox{\hyperlink{class_game_data}{Game\+Data}} \&other)
+\begin{DoxyCompactList}\small\item\em Constructor de copiere. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_data_a142b3796de9d3c1f63a5fe9edbb27395}{Game\+Data}} (std\+::string name, int \mbox{\hyperlink{class_game_data_ab59b5984f505b0adb62cbbc74148d757}{score}})
+\begin{DoxyCompactList}\small\item\em Constructor cu parametri. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_game_data}{Game\+Data}} \& \mbox{\hyperlink{class_game_data_aceb58a1833065947d275f44fdb8b2575}{operator=}} (const \mbox{\hyperlink{class_game_data}{Game\+Data}} \&other)
+\begin{DoxyCompactList}\small\item\em Operator de atribuire. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{class_game_data_a70fe5dfd95e2b5f1834c1af43891521b}{operator==}} (const \mbox{\hyperlink{class_game_data}{Game\+Data}} \&other) const
+\begin{DoxyCompactList}\small\item\em Operator de comparare a egalității. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \mbox{\hyperlink{class_game_data_af62521252f488c5c344bdf1ad7e2c9bc}{add\+Player}} (const std\+::string \&\mbox{\hyperlink{class_game_data_affa8918dc8fa60628cc9735d14a136d6}{player\+Name}}, int \mbox{\hyperlink{class_game_data_ab59b5984f505b0adb62cbbc74148d757}{score}})
+\begin{DoxyCompactList}\small\item\em Adaugă un nou jucător în lista globală de jucători. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_game_data_a74c226bfec494d3b56f00187306fc2ae}{sort\+Players\+By\+Score}} ()
+\begin{DoxyCompactList}\small\item\em Sortează lista globală de jucători în ordine descrescătoare a scorului. \end{DoxyCompactList}\item 
+static std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_game_data}{Game\+Data}} $>$ \mbox{\hyperlink{class_game_data_ae421dee951317316f07ec445ccbb5066}{find\+Player}} (const std\+::string \&\mbox{\hyperlink{class_game_data_affa8918dc8fa60628cc9735d14a136d6}{player\+Name}})
+\begin{DoxyCompactList}\small\item\em Găsește un jucător în lista globală după nume. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{class_game_data_a5a0ad0ea117f9ec056b406c89e3b4462}{display\+All\+Players}} ()
+\begin{DoxyCompactList}\small\item\em Afișează toți jucătorii din lista globală. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_game_data_affa8918dc8fa60628cc9735d14a136d6}\label{class_game_data_affa8918dc8fa60628cc9735d14a136d6} 
+std\+::string {\bfseries player\+Name}
+\begin{DoxyCompactList}\small\item\em Numele jucătorului. \end{DoxyCompactList}\item 
+\Hypertarget{class_game_data_ab59b5984f505b0adb62cbbc74148d757}\label{class_game_data_ab59b5984f505b0adb62cbbc74148d757} 
+int {\bfseries score}
+\begin{DoxyCompactList}\small\item\em Scorul jucătorului. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{class_game_data_a3b2c591a8b6081887808d43f91f0006b}{operator$>$$>$}} (std\+::istream \&input, \mbox{\hyperlink{class_game_data}{Game\+Data}} \&data)
+\begin{DoxyCompactList}\small\item\em Suprascrierea operatorului de intrare. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{class_game_data_ae092d2a15d7bf63d215944052365ab09}{operator$<$$<$}} (std\+::ostream \&output, const \mbox{\hyperlink{class_game_data}{Game\+Data}} \&data)
+\begin{DoxyCompactList}\small\item\em Suprascrierea operatorului de ieșire. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Reprezintă datele unui jucător, incluzând numele și scorul acestuia. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_game_data_a67ab18c5a35df618e99983275c7552ab}\index{GameData@{GameData}!GameData@{GameData}}
+\index{GameData@{GameData}!GameData@{GameData}}
+\doxysubsubsection{\texorpdfstring{GameData()}{GameData()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \label{class_game_data_a67ab18c5a35df618e99983275c7552ab} 
+Game\+Data\+::\+Game\+Data (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Constructor implicit pentru clasa \doxylink{class_game_data}{Game\+Data}. 
+
+Constructor implicit pentru \doxylink{class_game_data}{Game\+Data}. \Hypertarget{class_game_data_acae720560f6f8462328e801f08204804}\index{GameData@{GameData}!GameData@{GameData}}
+\index{GameData@{GameData}!GameData@{GameData}}
+\doxysubsubsection{\texorpdfstring{GameData()}{GameData()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \label{class_game_data_acae720560f6f8462328e801f08204804} 
+Game\+Data\+::\+Game\+Data (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_data}{Game\+Data}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Constructor de copiere. 
+
+Constructor de copiere pentru \doxylink{class_game_data}{Game\+Data}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Obiectul \doxylink{class_game_data}{Game\+Data} care va fi copiat.\\
+\hline
+{\em other} & Obiectul de copiat. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_game_data_a142b3796de9d3c1f63a5fe9edbb27395}\index{GameData@{GameData}!GameData@{GameData}}
+\index{GameData@{GameData}!GameData@{GameData}}
+\doxysubsubsection{\texorpdfstring{GameData()}{GameData()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \label{class_game_data_a142b3796de9d3c1f63a5fe9edbb27395} 
+Game\+Data\+::\+Game\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{name}{, }\item[{int}]{score}{}\end{DoxyParamCaption})}
+
+
+
+Constructor cu parametri. 
+
+Constructor cu parametri pentru \doxylink{class_game_data}{Game\+Data}.
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & Numele jucătorului. \\
+\hline
+{\em score} & Scorul jucătorului. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_game_data_af62521252f488c5c344bdf1ad7e2c9bc}\index{GameData@{GameData}!addPlayer@{addPlayer}}
+\index{addPlayer@{addPlayer}!GameData@{GameData}}
+\doxysubsubsection{\texorpdfstring{addPlayer()}{addPlayer()}}
+{\footnotesize\ttfamily \label{class_game_data_af62521252f488c5c344bdf1ad7e2c9bc} 
+void Game\+Data\+::add\+Player (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{player\+Name}{, }\item[{int}]{score}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Adaugă un nou jucător în lista globală de jucători. 
+
+Adaugă un nou jucător în lista globală.
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Name} & Numele jucătorului. \\
+\hline
+{\em score} & Scorul jucătorului. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_game_data_a5a0ad0ea117f9ec056b406c89e3b4462}\index{GameData@{GameData}!displayAllPlayers@{displayAllPlayers}}
+\index{displayAllPlayers@{displayAllPlayers}!GameData@{GameData}}
+\doxysubsubsection{\texorpdfstring{displayAllPlayers()}{displayAllPlayers()}}
+{\footnotesize\ttfamily \label{class_game_data_a5a0ad0ea117f9ec056b406c89e3b4462} 
+void Game\+Data\+::display\+All\+Players (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Afișează toți jucătorii din lista globală. 
+
+Afișează toți jucătorii în consolă. \Hypertarget{class_game_data_ae421dee951317316f07ec445ccbb5066}\index{GameData@{GameData}!findPlayer@{findPlayer}}
+\index{findPlayer@{findPlayer}!GameData@{GameData}}
+\doxysubsubsection{\texorpdfstring{findPlayer()}{findPlayer()}}
+{\footnotesize\ttfamily \label{class_game_data_ae421dee951317316f07ec445ccbb5066} 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{class_game_data}{Game\+Data}} $>$ Game\+Data\+::find\+Player (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{player\+Name}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Găsește un jucător în lista globală după nume. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em player\+Name} & Numele jucătorului căutat. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Un smart pointer către obiectul \doxylink{class_game_data}{Game\+Data} dacă este găsit, nullptr altfel. 
+\end{DoxyReturn}
+\Hypertarget{class_game_data_aceb58a1833065947d275f44fdb8b2575}\index{GameData@{GameData}!operator=@{operator=}}
+\index{operator=@{operator=}!GameData@{GameData}}
+\doxysubsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily \label{class_game_data_aceb58a1833065947d275f44fdb8b2575} 
+\mbox{\hyperlink{class_game_data}{Game\+Data}} \& Game\+Data\+::operator= (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_data}{Game\+Data}} \&}]{other}{}\end{DoxyParamCaption})}
+
+
+
+Operator de atribuire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Obiectul \doxylink{class_game_data}{Game\+Data} care va fi atribuit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referință la obiectul curent.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Obiectul de atribuit. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referință către obiectul curent. 
+\end{DoxyReturn}
+\Hypertarget{class_game_data_a70fe5dfd95e2b5f1834c1af43891521b}\index{GameData@{GameData}!operator==@{operator==}}
+\index{operator==@{operator==}!GameData@{GameData}}
+\doxysubsubsection{\texorpdfstring{operator==()}{operator==()}}
+{\footnotesize\ttfamily \label{class_game_data_a70fe5dfd95e2b5f1834c1af43891521b} 
+bool Game\+Data\+::operator== (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{class_game_data}{Game\+Data}} \&}]{other}{}\end{DoxyParamCaption}) const}
+
+
+
+Operator de comparare a egalității. 
+
+Operator de egalitate.
+
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Obiectul \doxylink{class_game_data}{Game\+Data} cu care se compară. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True dacă obiectele sunt egale, altfel false.
+\end{DoxyReturn}
+
+\begin{DoxyParams}{Parameters}
+{\em other} & Obiectul de comparat. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+True dacă obiectele sunt egale. 
+\end{DoxyReturn}
+\Hypertarget{class_game_data_a74c226bfec494d3b56f00187306fc2ae}\index{GameData@{GameData}!sortPlayersByScore@{sortPlayersByScore}}
+\index{sortPlayersByScore@{sortPlayersByScore}!GameData@{GameData}}
+\doxysubsubsection{\texorpdfstring{sortPlayersByScore()}{sortPlayersByScore()}}
+{\footnotesize\ttfamily \label{class_game_data_a74c226bfec494d3b56f00187306fc2ae} 
+void Game\+Data\+::sort\+Players\+By\+Score (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Sortează lista globală de jucători în ordine descrescătoare a scorului. 
+
+Sortează lista de jucători în ordine descrescătoare a scorului. 
+
+\doxysubsection{Friends And Related Symbol Documentation}
+\Hypertarget{class_game_data_ae092d2a15d7bf63d215944052365ab09}\index{GameData@{GameData}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!GameData@{GameData}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$}{operator<<}}
+{\footnotesize\ttfamily \label{class_game_data_ae092d2a15d7bf63d215944052365ab09} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{output}{, }\item[{const \mbox{\hyperlink{class_game_data}{Game\+Data}} \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Suprascrierea operatorului de ieșire. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & Fluxul de ieșire. \\
+\hline
+{\em data} & Obiectul \doxylink{class_game_data}{Game\+Data} de afișat. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referință către fluxul de ieșire. 
+\end{DoxyReturn}
+\Hypertarget{class_game_data_a3b2c591a8b6081887808d43f91f0006b}\index{GameData@{GameData}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!GameData@{GameData}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$}{operator>>}}
+{\footnotesize\ttfamily \label{class_game_data_a3b2c591a8b6081887808d43f91f0006b} 
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input}{, }\item[{\mbox{\hyperlink{class_game_data}{Game\+Data}} \&}]{data}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Suprascrierea operatorului de intrare. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Fluxul de intrare. \\
+\hline
+{\em data} & Obiectul \doxylink{class_game_data}{Game\+Data} de modificat. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Referință către fluxul de intrare. 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{_game_data_8hpp}{Game\+Data.\+hpp}}\item 
+\mbox{\hyperlink{_game_data_8cpp}{Game\+Data.\+cpp}}\end{DoxyCompactItemize}

@@ -1,0 +1,133 @@
+\doxysection{Game.\+hpp File Reference}
+\hypertarget{_game_8hpp}{}\label{_game_8hpp}\index{Game.hpp@{Game.hpp}}
+
+
+Declarațiile funcțiilor și variabilelor globale ale jocului.  
+
+
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_game_8hpp_a6a3ca153f0817e8ba91a023b886bb662}{Clear\+Screen}} ()
+\begin{DoxyCompactList}\small\item\em Curăță ecranul consolei. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_game_8hpp_a3d5cf0d8d37b6b17224867eb397c9a16}{Draw}} ()
+\begin{DoxyCompactList}\small\item\em Desenează harta jocului în consolă. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_game_8hpp_a811b7cf72f3317200595c3a353431608}{Input}} ()
+\begin{DoxyCompactList}\small\item\em Gestionează input-\/ul de la utilizator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_game_8hpp_aee63f92a45ce6f7952620205af92aadb}{Logic}} ()
+\begin{DoxyCompactList}\small\item\em Gestionează logica jocului (ex. coliziuni, puncte câștigate). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{_game_8hpp_a9649ab8139c4c2ea5c93625b30d92a05}\label{_game_8hpp_a9649ab8139c4c2ea5c93625b30d92a05} 
+const int {\bfseries WIDTH} = 20
+\begin{DoxyCompactList}\small\item\em Lățimea hărții jocului. \end{DoxyCompactList}\item 
+\Hypertarget{_game_8hpp_af728b7647e0b8c49832983a31f9a2e9b}\label{_game_8hpp_af728b7647e0b8c49832983a31f9a2e9b} 
+const int {\bfseries HEIGHT} = 10
+\begin{DoxyCompactList}\small\item\em Înălțimea hărții jocului. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_game_8hpp_a2bf4f8f36dea9fec92fa168aa7ccf561}{map}} \mbox{[}\mbox{\hyperlink{_game_8hpp_af728b7647e0b8c49832983a31f9a2e9b}{HEIGHT}}\mbox{]}\mbox{[}\mbox{\hyperlink{_game_8hpp_a9649ab8139c4c2ea5c93625b30d92a05}{WIDTH}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Harta jocului reprezentată ca o matrice bidimensională. \end{DoxyCompactList}\item 
+\Hypertarget{_game_8hpp_a29f353d9e98369a4528532af6c32c044}\label{_game_8hpp_a29f353d9e98369a4528532af6c32c044} 
+int {\bfseries pacmanX}
+\begin{DoxyCompactList}\small\item\em Coordonata X a personajului Pac-\/\+Man. \end{DoxyCompactList}\item 
+\Hypertarget{_game_8hpp_a5a06eca3fb74bf9e20c6cdf1c5c76e0f}\label{_game_8hpp_a5a06eca3fb74bf9e20c6cdf1c5c76e0f} 
+int {\bfseries pacmanY}
+\begin{DoxyCompactList}\small\item\em Coordonata Y a personajului Pac-\/\+Man. \end{DoxyCompactList}\item 
+\Hypertarget{_game_8hpp_aef160b7437d94056f1dc59646cd5b87d}\label{_game_8hpp_aef160b7437d94056f1dc59646cd5b87d} 
+int {\bfseries score}
+\begin{DoxyCompactList}\small\item\em Scorul curent al jucătorului. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Declarațiile funcțiilor și variabilelor globale ale jocului. 
+
+\begin{DoxyAuthor}{Author}
+\mbox{[}Strechi Marian\mbox{]} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+04.\+12.\+2024 
+\end{DoxyDate}
+
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_game_8hpp_a6a3ca153f0817e8ba91a023b886bb662}\index{Game.hpp@{Game.hpp}!ClearScreen@{ClearScreen}}
+\index{ClearScreen@{ClearScreen}!Game.hpp@{Game.hpp}}
+\doxysubsubsection{\texorpdfstring{ClearScreen()}{ClearScreen()}}
+{\footnotesize\ttfamily \label{_game_8hpp_a6a3ca153f0817e8ba91a023b886bb662} 
+void Clear\+Screen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Curăță ecranul consolei. 
+
+Folosește comanda {\ttfamily cls} pentru a șterge conținutul terminalului. \Hypertarget{_game_8hpp_a3d5cf0d8d37b6b17224867eb397c9a16}\index{Game.hpp@{Game.hpp}!Draw@{Draw}}
+\index{Draw@{Draw}!Game.hpp@{Game.hpp}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily \label{_game_8hpp_a3d5cf0d8d37b6b17224867eb397c9a16} 
+void Draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Desenează harta jocului în consolă. 
+
+Reprezintă harta cu simboluri\+:
+\begin{DoxyItemize}
+\item {\ttfamily G}\+: Pac-\/\+Man
+\item {\ttfamily \#}\+: Perete
+\item {\ttfamily .}\+: Punct colectabil
+\item \+: Celulă goală 
+\end{DoxyItemize}\texorpdfstring{$<$}{<} Reprezintă Pac-\/\+Man
+
+\texorpdfstring{$<$}{<} Reprezintă un perete
+
+\texorpdfstring{$<$}{<} Reprezintă o celulă goală
+
+\texorpdfstring{$<$}{<} Reprezintă un punct colectabil\Hypertarget{_game_8hpp_a811b7cf72f3317200595c3a353431608}\index{Game.hpp@{Game.hpp}!Input@{Input}}
+\index{Input@{Input}!Game.hpp@{Game.hpp}}
+\doxysubsubsection{\texorpdfstring{Input()}{Input()}}
+{\footnotesize\ttfamily \label{_game_8hpp_a811b7cf72f3317200595c3a353431608} 
+void Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gestionează input-\/ul de la utilizator. 
+
+Detectează apăsarea tastelor pentru a mișca Pac-\/\+Man\+:
+\begin{DoxyItemize}
+\item {\ttfamily w}\+: sus
+\item {\ttfamily s}\+: jos
+\item {\ttfamily a}\+: stânga
+\item {\ttfamily d}\+: dreapta 
+\end{DoxyItemize}\Hypertarget{_game_8hpp_aee63f92a45ce6f7952620205af92aadb}\index{Game.hpp@{Game.hpp}!Logic@{Logic}}
+\index{Logic@{Logic}!Game.hpp@{Game.hpp}}
+\doxysubsubsection{\texorpdfstring{Logic()}{Logic()}}
+{\footnotesize\ttfamily \label{_game_8hpp_aee63f92a45ce6f7952620205af92aadb} 
+void Logic (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gestionează logica jocului (ex. coliziuni, puncte câștigate). 
+
+Gestionează logica jocului (ex. coliziuni, puncte câștigate).
+
+Verifică dacă Pac-\/\+Man colectează un punct și actualizează scorul. \texorpdfstring{$<$}{<} Crește scorul cu 10 puncte
+
+\texorpdfstring{$<$}{<} Eliberează celula
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_game_8hpp_a2bf4f8f36dea9fec92fa168aa7ccf561}\index{Game.hpp@{Game.hpp}!map@{map}}
+\index{map@{map}!Game.hpp@{Game.hpp}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily \label{_game_8hpp_a2bf4f8f36dea9fec92fa168aa7ccf561} 
+int map\mbox{[}\mbox{\hyperlink{_game_8hpp_af728b7647e0b8c49832983a31f9a2e9b}{HEIGHT}}\mbox{]}\mbox{[}\mbox{\hyperlink{_game_8hpp_a9649ab8139c4c2ea5c93625b30d92a05}{WIDTH}}\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Harta jocului reprezentată ca o matrice bidimensională. 
+
+Fiecare element din matrice reprezintă o celulă\+:
+\begin{DoxyItemize}
+\item 0\+: celulă goală
+\item 1\+: perete
+\item 2\+: punct colectabil 
+\end{DoxyItemize}
