@@ -40,7 +40,7 @@ Pacman Modernizat este o reimaginare a jocului clasic Pacman, implementat folosi
 
 
 ## Documentatia:
-Poate fi accesata prin deschiderea file-ului "DOCUMENTATION" în mapa principală a proiectului.
+Poate fi accesata în mapa "html" prin deschiderea file-ului index.html.
 
 
 
