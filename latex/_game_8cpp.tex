@@ -1,0 +1,182 @@
+\doxysection{Game.\+cpp File Reference}
+\hypertarget{_game_8cpp}{}\label{_game_8cpp}\index{Game.cpp@{Game.cpp}}
+
+
+Implementarea funcțiilor principale ale jocului Pac-\/\+Man.  
+
+
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$conio.\+h$>$}\newline
+{\ttfamily \#include $<$windows.\+h$>$}\newline
+{\ttfamily \#include "{}Game.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{_game_8cpp_a6a3ca153f0817e8ba91a023b886bb662}{Clear\+Screen}} ()
+\begin{DoxyCompactList}\small\item\em Curăță ecranul consolei. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_game_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16}{Draw}} ()
+\begin{DoxyCompactList}\small\item\em Desenează harta jocului în consolă. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_game_8cpp_a811b7cf72f3317200595c3a353431608}{Input}} ()
+\begin{DoxyCompactList}\small\item\em Gestionează input-\/ul de la utilizator. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{_game_8cpp_aee63f92a45ce6f7952620205af92aadb}{Logic}} ()
+\begin{DoxyCompactList}\small\item\em Gestionează logica jocului. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_game_8cpp_a2bf4f8f36dea9fec92fa168aa7ccf561}{map}} \mbox{[}\mbox{\hyperlink{_game_8hpp_af728b7647e0b8c49832983a31f9a2e9b}{HEIGHT}}\mbox{]}\mbox{[}\mbox{\hyperlink{_game_8hpp_a9649ab8139c4c2ea5c93625b30d92a05}{WIDTH}}\mbox{]}
+\begin{DoxyCompactList}\small\item\em Harta jocului reprezentată ca o matrice bidimensională. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_game_8cpp_a29f353d9e98369a4528532af6c32c044}{pacmanX}} = 1
+\begin{DoxyCompactList}\small\item\em Coordonata X a personajului Pac-\/\+Man. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_game_8cpp_a5a06eca3fb74bf9e20c6cdf1c5c76e0f}{pacmanY}} = 1
+\begin{DoxyCompactList}\small\item\em Coordonata Y a personajului Pac-\/\+Man. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{_game_8cpp_aef160b7437d94056f1dc59646cd5b87d}{score}} = 0
+\begin{DoxyCompactList}\small\item\em Scorul curent al jucătorului. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementarea funcțiilor principale ale jocului Pac-\/\+Man. 
+
+\begin{DoxyAuthor}{Author}
+\mbox{[}Strechi Marian\mbox{]} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2024
+\end{DoxyDate}
+Acest fișier conține logica jocului, inclusiv gestionarea hărții, mișcarea jucătorului și sistemul de scor. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_game_8cpp_a6a3ca153f0817e8ba91a023b886bb662}\index{Game.cpp@{Game.cpp}!ClearScreen@{ClearScreen}}
+\index{ClearScreen@{ClearScreen}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{ClearScreen()}{ClearScreen()}}
+{\footnotesize\ttfamily \label{_game_8cpp_a6a3ca153f0817e8ba91a023b886bb662} 
+void Clear\+Screen (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Curăță ecranul consolei. 
+
+Șterge ecranul terminalului pentru a pregăti afișarea următoarei stări a jocului.
+
+Folosește comanda {\ttfamily cls} pentru a șterge conținutul terminalului. \Hypertarget{_game_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16}\index{Game.cpp@{Game.cpp}!Draw@{Draw}}
+\index{Draw@{Draw}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{Draw()}{Draw()}}
+{\footnotesize\ttfamily \label{_game_8cpp_a3d5cf0d8d37b6b17224867eb397c9a16} 
+void Draw (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Desenează harta jocului în consolă. 
+
+Desenează harta și afișează starea curentă a jocului.
+
+Reprezintă harta cu simboluri\+:
+\begin{DoxyItemize}
+\item {\ttfamily G}\+: Pac-\/\+Man
+\item {\ttfamily \#}\+: Perete
+\item {\ttfamily .}\+: Punct colectabil
+\item \+: Celulă goală 
+\end{DoxyItemize}\texorpdfstring{$<$}{<} Reprezintă Pac-\/\+Man
+
+\texorpdfstring{$<$}{<} Reprezintă un perete
+
+\texorpdfstring{$<$}{<} Reprezintă o celulă goală
+
+\texorpdfstring{$<$}{<} Reprezintă un punct colectabil\Hypertarget{_game_8cpp_a811b7cf72f3317200595c3a353431608}\index{Game.cpp@{Game.cpp}!Input@{Input}}
+\index{Input@{Input}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{Input()}{Input()}}
+{\footnotesize\ttfamily \label{_game_8cpp_a811b7cf72f3317200595c3a353431608} 
+void Input (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gestionează input-\/ul de la utilizator. 
+
+Procesează intrările utilizatorului pentru a controla jocul.
+
+Detectează apăsarea tastelor pentru a mișca Pac-\/\+Man\+:
+\begin{DoxyItemize}
+\item {\ttfamily w}\+: sus
+\item {\ttfamily s}\+: jos
+\item {\ttfamily a}\+: stânga
+\item {\ttfamily d}\+: dreapta 
+\end{DoxyItemize}\Hypertarget{_game_8cpp_aee63f92a45ce6f7952620205af92aadb}\index{Game.cpp@{Game.cpp}!Logic@{Logic}}
+\index{Logic@{Logic}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{Logic()}{Logic()}}
+{\footnotesize\ttfamily \label{_game_8cpp_aee63f92a45ce6f7952620205af92aadb} 
+void Logic (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Gestionează logica jocului. 
+
+Gestionează logica principală a jocului, inclusiv mișcarea și scorul.
+
+Verifică dacă Pac-\/\+Man colectează un punct și actualizează scorul. \texorpdfstring{$<$}{<} Crește scorul cu 10 puncte
+
+\texorpdfstring{$<$}{<} Eliberează celula
+
+\doxysubsection{Variable Documentation}
+\Hypertarget{_game_8cpp_a2bf4f8f36dea9fec92fa168aa7ccf561}\index{Game.cpp@{Game.cpp}!map@{map}}
+\index{map@{map}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{map}{map}}
+{\footnotesize\ttfamily \label{_game_8cpp_a2bf4f8f36dea9fec92fa168aa7ccf561} 
+int map\mbox{[}\mbox{\hyperlink{_game_8hpp_af728b7647e0b8c49832983a31f9a2e9b}{HEIGHT}}\mbox{]}\mbox{[}\mbox{\hyperlink{_game_8hpp_a9649ab8139c4c2ea5c93625b30d92a05}{WIDTH}}\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=\ \{}
+\DoxyCodeLine{\ \ \ \ \{1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 1,\ 1,\ 0,\ 1,\ 1,\ 1,\ 0,\ 1,\ 0,\ 1,\ 1,\ 1,\ 0,\ 1,\ 1,\ 1,\ 0,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 1,\ 0,\ 1,\ 1,\ 1,\ 1,\ 0,\ 1,\ 0,\ 1,\ 1,\ 1,\ 0,\ 1,\ 0,\ 1,\ 0,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 0,\ 1,\ 0,\ 1,\ 1,\ 1,\ 1,\ 1,\ 0,\ 1,\ 0,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \{1,\ 0,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 1,\ 0,\ 0,\ 0,\ 0,\ 0,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \{1,\ 1,\ 0,\ 1,\ 0,\ 1,\ 0,\ 1,\ 0,\ 1,\ 0,\ 1,\ 0,\ 1,\ 0,\ 1,\ 0,\ 1,\ 1,\ 1\},}
+\DoxyCodeLine{\ \ \ \ \{1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1,\ 1\},}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Harta jocului reprezentată ca o matrice bidimensională. 
+
+Matrice care reprezintă harta jocului.
+
+Fiecare element din matrice reprezintă o celulă\+:
+\begin{DoxyItemize}
+\item 0\+: celulă goală
+\item 1\+: perete
+\item 2\+: punct colectabil 
+\end{DoxyItemize}\Hypertarget{_game_8cpp_a29f353d9e98369a4528532af6c32c044}\index{Game.cpp@{Game.cpp}!pacmanX@{pacmanX}}
+\index{pacmanX@{pacmanX}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{pacmanX}{pacmanX}}
+{\footnotesize\ttfamily \label{_game_8cpp_a29f353d9e98369a4528532af6c32c044} 
+int pacmanX = 1}
+
+
+
+Coordonata X a personajului Pac-\/\+Man. 
+
+Coordonata X a lui Pacman. \Hypertarget{_game_8cpp_a5a06eca3fb74bf9e20c6cdf1c5c76e0f}\index{Game.cpp@{Game.cpp}!pacmanY@{pacmanY}}
+\index{pacmanY@{pacmanY}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{pacmanY}{pacmanY}}
+{\footnotesize\ttfamily \label{_game_8cpp_a5a06eca3fb74bf9e20c6cdf1c5c76e0f} 
+int pacmanY = 1}
+
+
+
+Coordonata Y a personajului Pac-\/\+Man. 
+
+Coordonata Y a lui Pacman. \Hypertarget{_game_8cpp_aef160b7437d94056f1dc59646cd5b87d}\index{Game.cpp@{Game.cpp}!score@{score}}
+\index{score@{score}!Game.cpp@{Game.cpp}}
+\doxysubsubsection{\texorpdfstring{score}{score}}
+{\footnotesize\ttfamily \label{_game_8cpp_aef160b7437d94056f1dc59646cd5b87d} 
+int score = 0}
+
+
+
+Scorul curent al jucătorului. 
+
+Scorul curent al jocului. 

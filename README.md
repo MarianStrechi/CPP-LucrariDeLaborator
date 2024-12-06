@@ -1,37 +1,49 @@
-Acesta este un joc simplu PacMan creat pe o aplicatie-consola. Personajul este reprezentat de simboul "G", peretii de simbolul "#", iar fantomele(inamicii) de simbolul "." Scopul jocului este de a prinde aceste fantome, miscand personajul spre ele, si pentru fiecare fantoma prinsa se da scorul +10. Mișcarea personajului se realizează cu tastele W,A,S,D.
+# Proiect: Pacman 
 
-Descrierea funcționalității programului:
+## Descrierea proiectului
+Pacman Modernizat este o reimaginare a jocului clasic Pacman, implementat folosind C++ și un mediu de consolă. Scopul proiectului este de a oferi o versiune simplificată, dar captivantă, care să permită utilizatorilor să navigheze printr-un labirint, colectând puncte și evitând obstacole. Jocul este o demonstrație de programare orientată pe obiect și algoritmi de bază.
 
-1. Game.hpp
-Acest fișier de antet definește constantele și funcțiile necesare pentru joc:
+## Reguli ale jocului
+1. **Obiectivul**: Ghidează Pacman pentru a colecta punctele din labirint.
+2. Mișcări:
+   - Apasă `W` pentru a te deplasa în sus.
+   - Apasă `S` pentru a te deplasa în jos.
+   - Apasă `A` pentru a te deplasa în stânga.
+   - Apasă `D` pentru a te deplasa în dreapta.
+3. Obstacole: Pereții (#) nu pot fi traversați.
+4. Scor:
+   - Fiecare punct colectat adaugă 10 puncte la scorul tău.
+5. Finalul jocului: Jocul se încheie atunci când toate punctele sunt colectate sau utilizatorul decide să își oprească jocul.
 
-Constante:
-WIDTH = 20 și HEIGHT = 10 stabilesc dimensiunea hărții jocului.
-Variabile externe:
-map[HEIGHT][WIDTH]: o matrice care reprezintă harta jocului.
-pacmanX și pacmanY: coordonatele lui Pacman pe hartă.
-score: scorul curent al jucătorului.
-Funcții:
-ClearScreen(): curăță ecranul.
-Draw(): desenează harta și starea actuală a jocului.
-Input(): citește și procesează input-ul de la jucător.
-Logic(): gestionează logica jocului, inclusiv creșterea scorului.
+## Dependențe ale proiectului
+- Mediu de dezvoltare: Visual Studio, Code::Blocks sau orice alt IDE compatibil cu C++.
+- Compilator: MinGW sau MSVC (Microsoft Visual C++).
+- Biblioteci utilizate:
+  - `<iostream>` pentru operațiuni de intrare/ieșire.
+  - `<conio.h>` pentru detectarea tastelor.
+  - `<windows.h>` pentru manipularea consolei.
+  - `<string>`, `<vector>` și `<memory>` pentru gestionarea datelor.
 
-2. Game.cpp
-Acesta este fișierul principal al jocului care implementează funcțiile definite în Game.hpp:
+## Instrucțiuni de construire a aplicației
+1. Clonare repository:
+   ```bash
+   git clone https://github.com/username/PacmanModernizat.git
+   cd PacmanModernizat
+   ```
+2. Deschidere proiect: Deschide fișierul proiectului (`.sln` pentru Visual Studio sau proiectul din IDE-ul preferat).
+3. Compilare:
+   - Asigură-te că toate dependențele sunt incluse și configurate corect.
+   - Rulează comanda de build sau utilizează opțiunea de compilare a IDE-ului.
+4. Rulare:
+   - Execută fișierul generat (`PacmanModernizat.exe`).
+   - Urmează instrucțiunile afișate în consolă pentru a juca.
 
-Definirea hărții:
-map[HEIGHT][WIDTH]: o matrice ce reprezintă harta jocului. Valorile 1 reprezintă pereții (#), 0 reprezintă spațiile libere ( ), iar 2 reprezintă punctele de scor (.).
-Funcții:
-ClearScreen(): folosește comanda system("cls") pentru a curăța ecranul.
-Draw(): desenează harta pe ecran, reprezentând Pacman cu simbolul G, pereții cu #, spațiile libere cu , și punctele de scor(fantomele) cu "." . De asemenea, afișează scorul curent.
-Input(): detectează apăsarea tastelor W,A,S,D pentru a mișca Pacman în sus, stânga, jos, și dreapta, dacă nu există un perete obstacol în direcția respectivă.
-Logic(): verifică dacă Pacman se află pe un punct de scor (valoarea 2), adaugă 10 puncte la scor, și elimină punctul de pe hartă schimbând valoarea la 0.
 
-3. main.cpp
-Acest fișier conține funcția main() care gestionează bucla principală a jocului:
+## Documentatia:
+Poate fi accesata prin deschiderea file-ului "DOCUMENTATION" în mapa principală a proiectului.
 
-Setează câteva poziții de pe hartă cu valoarea 2 pentru a reprezenta punctele de scor.
-Bucla principală:
-Apeluri la funcțiile Draw(), Input(), și Logic() pentru a desena harta, a procesa input-ul jucătorului și a gestiona logica jocului.
-Folosește Sleep(100) pentru a introduce o întârziere de 100 milisecunde între fiecare ciclu al buclei, astfel încât jocul să nu ruleze prea repede.
+
+
+##Teste:
+Am creat un proiect nou special pentru teste cu referința la proiectul principal, în mapa "PACMAN TEST". Testul a mers cu succes, nu s-a dat nici o eroare în compilator la build.
+
