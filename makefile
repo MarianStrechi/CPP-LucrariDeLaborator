@@ -1,43 +1,28 @@
-﻿# Compiler
+﻿# Compilator și flag-uri
 CXX = g++
-CXXFLAGS = -Iinclude -std=c++17 -Wall
+CXXFLAGS = -std=c++17 -Wall -Wextra -O2
 
-# Directoare
-SRC_DIR = src
-LIB_DIR = lib
-INCLUDE_DIR = include
+# Fisiere sursă și binar
+SOURCES = main.cpp GameData.cpp GameLogic.cpp
+HEADERS = GameData.hpp GameLogic.hpp
+OBJECTS = $(SOURCES:.cpp=.o)
+TARGET = pacman_game
 
-# Output
-OUT_DIR = bin
-OUT_FILE = $(OUT_DIR)/game
+# Regulă implicită
+all: $(TARGET)
 
-# Biblioteca statică
-LIBRARY = $(OUT_DIR)/libgame.a
+# Regulă pentru crearea executabilului
+$(TARGET): $(OBJECTS)
+	$(CXX) $(CXXFLAGS) -o $@ $^
 
-# Fișiere sursă
-LIB_SOURCES = $(wildcard $(LIB_DIR)/*.cpp)
-MAIN_SOURCE = $(wildcard $(SRC_DIR)/*.cpp)
-
-# Fișiere obiect
-LIB_OBJECTS = $(LIB_SOURCES:$(LIB_DIR)/%.cpp=$(OUT_DIR)/%.o)
-MAIN_OBJECT = $(MAIN_SOURCE:$(SRC_DIR)/%.cpp=$(OUT_DIR)/%.o)
-
-# Reguli
-all: $(OUT_FILE)
-
-$(OUT_FILE): $(LIBRARY) $(MAIN_OBJECT)
-	$(CXX) $(CXXFLAGS) -o $@ $(MAIN_OBJECT) $(LIBRARY)
-
-$(LIBRARY): $(LIB_OBJECTS)
-	ar rcs $@ $^
-
-$(OUT_DIR)/%.o: $(LIB_DIR)/%.cpp
-	@mkdir -p $(OUT_DIR)
+# Regulă pentru fișierele obiect
+%.o: %.cpp $(HEADERS)
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-$(OUT_DIR)/%.o: $(SRC_DIR)/%.cpp
-	@mkdir -p $(OUT_DIR)
-	$(CXX) $(CXXFLAGS) -c $< -o $@
-
+# Curățare fișiere generate
 clean:
-	rm -rf $(OUT_DIR)
+	rm -f $(OBJECTS) $(TARGET)
+
+# Phony targets pentru a evita conflicte cu fișiere reale
+.PHONY: all clean
+

@@ -1,0 +1,81 @@
+\doxysection{Game\+Data.\+cpp File Reference}
+\hypertarget{_game_data_8cpp}{}\label{_game_data_8cpp}\index{GameData.cpp@{GameData.cpp}}
+
+
+Implementarea clasei \doxylink{class_game_data}{Game\+Data}.  
+
+
+{\ttfamily \#include "{}Game\+Data.\+hpp"{}}\newline
+\doxysubsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::istream \& \mbox{\hyperlink{_game_data_8cpp_a3b2c591a8b6081887808d43f91f0006b}{operator$>$$>$}} (std\+::istream \&input, \mbox{\hyperlink{class_game_data}{Game\+Data}} \&data)
+\begin{DoxyCompactList}\small\item\em Citire obiect \doxylink{class_game_data}{Game\+Data} din flux de intrare.~\newline
+. \end{DoxyCompactList}\item 
+std\+::ostream \& \mbox{\hyperlink{_game_data_8cpp_ae092d2a15d7bf63d215944052365ab09}{operator$<$$<$}} (std\+::ostream \&output, const \mbox{\hyperlink{class_game_data}{Game\+Data}} \&data)
+\begin{DoxyCompactList}\small\item\em Scriere obiect \doxylink{class_game_data}{Game\+Data} în flux de ieșire.~\newline
+. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Implementarea clasei \doxylink{class_game_data}{Game\+Data}. 
+
+\begin{DoxyAuthor}{Author}
+\mbox{[}Strechi Marian\mbox{]} 
+\end{DoxyAuthor}
+\begin{DoxyDate}{Date}
+2024
+\end{DoxyDate}
+Conține implementarea metodelor pentru gestionarea datelor despre jucători. 
+
+\doxysubsection{Function Documentation}
+\Hypertarget{_game_data_8cpp_ae092d2a15d7bf63d215944052365ab09}\index{GameData.cpp@{GameData.cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!GameData.cpp@{GameData.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily \label{_game_data_8cpp_ae092d2a15d7bf63d215944052365ab09} 
+std\+::ostream \& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{output}{, }\item[{const \mbox{\hyperlink{class_game_data}{Game\+Data}} \&}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Scriere obiect \doxylink{class_game_data}{Game\+Data} în flux de ieșire.~\newline
+. 
+
+Suprascrierea operatorului de ieșire.
+
+
+\begin{DoxyParams}{Parameters}
+{\em output} & Fluxul de ieșire.~\newline
+\\
+\hline
+{\em data} & Obiectul \doxylink{class_game_data}{Game\+Data} care va fi scris.~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Fluxul de ieșire. 
+\end{DoxyReturn}
+\Hypertarget{_game_data_8cpp_a3b2c591a8b6081887808d43f91f0006b}\index{GameData.cpp@{GameData.cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!GameData.cpp@{GameData.cpp}}
+\doxysubsubsection{\texorpdfstring{operator$>$$>$()}{operator>>()}}
+{\footnotesize\ttfamily \label{_game_data_8cpp_a3b2c591a8b6081887808d43f91f0006b} 
+std\+::istream \& operator$>$$>$ (\begin{DoxyParamCaption}\item[{std\+::istream \&}]{input}{, }\item[{\mbox{\hyperlink{class_game_data}{Game\+Data}} \&}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Citire obiect \doxylink{class_game_data}{Game\+Data} din flux de intrare.~\newline
+. 
+
+Suprascrierea operatorului de intrare.
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Fluxul de intrare.~\newline
+\\
+\hline
+{\em data} & Obiectul \doxylink{class_game_data}{Game\+Data} care va fi citit.~\newline
+\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Fluxul de intrare. 
+\end{DoxyReturn}
